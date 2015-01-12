@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.eclipse.eg.ExtRcp.ExtPoint" name="ExtPoint" schema="schema/com.eclipse.eg.ExtRcp.ExtPoint.exsd"/>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.eclipse.eg.extrcp.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.eclipse.eg.extrcp.Perspective"
+            id="com.eclipse.eg.ExtRcp.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.eclipse.eg.extrcp.extPoint.ExtPointView"
+            id="com.eclipse.eg.extrcp.extPoint.ExtPointView"
+            name="ExtPointView"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>
